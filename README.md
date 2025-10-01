@@ -557,16 +557,16 @@ Incident Response Plan:
 - **3D Experience**: Mobile-optimized 3D interface
 
 ### Download Links
-- 📱 **iOS**: [App Store](https://apps.apple.com/app/ava-trading)
+- 📱 **iOS**: [App Store](https://apps.apple.com/app/ava-voice-trading)
 - 🤖 **Android**: [Google Play](https://play.google.com/store/apps/details?id=live.avatar.trading)
 - 🌐 **PWA**: [Web App](https://app.ava-tar.live)
 
 ## 🌍 Community & Ecosystem
 
 ### Official Channels
-- **🌐 Website**: [avavoice.trade](https://avavoice.trade)
+- **🌐 Website**: [ava-tar.trade](https://avavoice.trade)
 - **📱 Telegram**: [t.me/AvaVoiceTrading](https://t.me/AvaVoiceTrading)
-- **🐦 Twitter**: [@ava_tar_live](https://twitter.com/AvaVoiceTrading)
+- **🐦 Twitter**: [@AvaVoiceTrading](https://twitter.com/AvaVoiceTrading)
 
 ### Developer Resources
 - **📚 Documentation**: [docs.ava-tar.live](https://docs.ava-tar.live)
