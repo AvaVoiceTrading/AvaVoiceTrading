@@ -1,9 +1,9 @@
-# $AVA - Your Web3 Muse 💋
+# $AVATAR - Your Web3 Muse 💋
 
 > **Exclusive. Sophisticated. Web3.**  
 > Revolutionary AI-powered trading assistant built on custom Ethereum fork with immersive 3D experience and advanced voice capabilities.
 
-## 🌟 What is $AVA?
+## 🌟 What is $AVATAR?
 
 $AVA is the world's first comprehensive Web3 AI assistant that combines:
 - **🤖 Advanced AI**: Powered by Gemini 2.5 LLM with specialized crypto training
@@ -15,9 +15,9 @@ $AVA is the world's first comprehensive Web3 AI assistant that combines:
 ## 🚀 Quick Start
 
 ### Live Demo
-- **🌐 Main DApp**: [app.avavoice.trade](https://app.avavoice.trade)
-- **🎮 3D Experience**: [3d.avavoice.trade](https://3d.avavoice.trade)
-- **📖 Documentation**: [docs.avavoice.trade](https://docs.avavoice.trade)
+- **🌐 Main DApp**: [app.ava-tar.trade](https://app.ava-tar.trade)
+- **🎮 3D Experience**: [3d.ava-tar.trade](https://3d.ava-tar.trade)
+- **📖 Documentation**: [docs.ava-tar.trade](https://docs.ava-tar.trade)
 
 ### Installation
 ```bash
@@ -629,7 +629,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **🚀 Ready to revolutionize your crypto trading experience?**
 
-**[Get Started](https://app.avavoice.trade) | [Join X](https://x.com/AvaVoiceTrading) | [Read Docs](https://docs.avavoice.trade)**
+**[Get Started](https://app.ava-tar.trade) | [Join X](https://x.com/AvaVoiceTrading) | [Read Docs](https://docs.ava-tar.trade)**
 
 ---
 
