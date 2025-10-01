@@ -15,9 +15,9 @@ $AVA is the world's first comprehensive Web3 AI assistant that combines:
 ## 🚀 Quick Start
 
 ### Live Demo
-- **🌐 Main DApp**: [app.avavoice.trade](app.avavoice.trade)
-- **🎮 3D Experience**: [3d.avavoice.trade](3d.avavoice.trade)
-- **📖 Documentation**: [docs.avavoice.trade](docs.avavoice.trade)
+- **🌐 Main DApp**: [app.avavoice.trade](https://app.avavoice.trade)
+- **🎮 3D Experience**: [3d.avavoice.trade](https://3d.avavoice.trade)
+- **📖 Documentation**: [docs.avavoice.trade](https://docs.avavoice.trade)
 
 ### Installation
 ```bash
