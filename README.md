@@ -1038,4 +1038,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ by the AVA Voice Trade Team**
 
-[⭐ Star us on GitHub](https://github.com/AvaVoiceTrading) | [🐛 Report Bug](https://github.com/AvaVoiceTrading/issues) | [💡 Request Feature](https://github.com/AvaVoiceTrading/issues)
+[⭐ Star us on GitHub](https://github.com/AvaVoiceTrading/AvaVoiceTrading) | [🐛 Report Bug](https://github.com/AvaVoiceTrading/AvaVoiceTrading/issues) | [💡 Request Feature](https://github.com/AvaVoiceTrading/AvaVoiceTrading/issues)
