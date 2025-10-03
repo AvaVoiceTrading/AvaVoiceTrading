@@ -1,4 +1,4 @@
-# 🎤 Ava the $AVATAR Voice Trading Platform
+# 🎤 Ava the $AVATAR - Voice Trading
 
 **Voice-Controlled AI Avatar Trading Platform on Ethereum**
 
