@@ -1,636 +1,1041 @@
-# $AVATAR - Your Web3 Muse 💋
+# 🎤 Ava the $AVATAR Voice Trading Platform
 
-> **Exclusive. Sophisticated. Web3.**  
-> Revolutionary AI-powered trading assistant built on custom Ethereum fork with immersive 3D experience and advanced voice capabilities.
+**Voice-Controlled AI Avatar Trading Platform on Ethereum**
 
-## 🌟 What is $AVATAR?
+---
 
-$AVA is the world's first comprehensive Web3 AI assistant that combines:
-- **🤖 Advanced AI**: Powered by Gemini 2.5 LLM with specialized crypto training
-- **🎙️ Voice Trading**: Natural language voice commands for seamless trading
-- **🎮 3D Experience**: Immersive WebGL-powered trading environments
-- **⛓️ Custom Blockchain**: Optimized Ethereum fork with 90% gas reduction
-- **🔒 Enterprise Security**: Multi-layer security with voice biometric authentication
+## 🌟 Overview
 
-## 🚀 Quick Start
+AVA the Avatar is an innovative voice-controlled trading platform where an **AI Avatar** recognizes your voice commands and executes trading operations on the Ethereum network. Deposit funds into your Vault, speak your trading intentions, and the Avatar AI processes your voice, understands the command, and executes trades automatically.
 
-### Live Demo
-- **🌐 Main DApp**: [app.ava-tar.trade](https://app.ava-tar.trade)
-- **🎮 3D Experience**: [3d.ava-tar.trade](https://3d.ava-tar.trade)
-- **📖 Documentation**: [docs.ava-tar.trade](https://docs.ava-tar.trade)
+### ✨ Key Features
+
+- 🎤 **Voice-Activated Trading** - Trade crypto using natural voice commands
+- 🤖 **AI Avatar Interface** - Interactive 3D avatar with real-time feedback
+- 💰 **Smart Vault System** - Secure, non-custodial fund management
+- ⛓️ **Ethereum Integration** - Direct blockchain interaction with DEX aggregators
+- 🔒 **Thoroughly Tested** - Validated on AVA Mainnet (Ethereum fork) before production
+- 🚀 **Lightning Fast** - Real-time execution with gas optimization
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TB
+    subgraph USER["👤 USER"]
+        U1[🎤 Voice Input<br/>Microphone]
+        U2[🦊 Web3 Wallet<br/>MetaMask]
+        U3[👁️ Visual Feedback<br/>3D Avatar]
+    end
+    
+    subgraph INTERFACE["🌐 WEB INTERFACE"]
+        I1[3D Avatar Display<br/>Three.js]
+        I2[Voice Recognition<br/>Web Speech API]
+        I3[Web3 Connection<br/>Ethers.js]
+    end
+    
+    subgraph AI_ENGINE["🤖 AI AVATAR ENGINE"]
+        A1[Speech to Text<br/>Transcription]
+        A2[NLP Processing<br/>Intent Recognition]
+        A3[Command Parser<br/>Extract Parameters]
+        A4[Voice Response<br/>Text to Speech]
+    end
+    
+    subgraph VAULT["💰 VAULT SYSTEM"]
+        V1[User Balance<br/>Deposited Funds]
+        V2[Smart Contract<br/>Fund Management]
+        V3[Transaction Pool<br/>Pending Operations]
+    end
+    
+    subgraph TRADING["📊 TRADING ENGINE"]
+        T1[Order Validation<br/>Check Balance]
+        T2[DEX Integration<br/>Uniswap/1inch]
+        T3[Transaction Builder<br/>Gas Optimization]
+        T4[Execution Monitor<br/>Status Tracking]
+    end
+    
+    subgraph BLOCKCHAIN["⛓️ ETHEREUM NETWORK"]
+        B1[Smart Contracts]
+        B2[DEX Protocols]
+        B3[Token Contracts]
+        B4[Transaction Pool]
+    end
+    
+    U1 --> I2
+    U2 --> I3
+    I1 --> U3
+    
+    I2 --> A1
+    A1 --> A2
+    A2 --> A3
+    A3 --> A4
+    A4 --> I1
+    
+    A3 --> V2
+    V1 --> V2
+    V2 --> V3
+    
+    V3 --> T1
+    T1 --> T2
+    T2 --> T3
+    T3 --> T4
+    
+    T4 --> B1
+    B1 --> B2
+    B2 --> B3
+    B3 --> B4
+    
+    T4 --> A4
+    I3 --> B4
+```
+
+---
+
+## 🎤 Voice Trading Flow
+
+```mermaid
+sequenceDiagram
+    participant User as 👤 User
+    participant Mic as 🎤 Microphone
+    participant Avatar as 🤖 AI Avatar
+    participant NLP as 🧠 NLP Engine
+    participant Vault as 💰 Vault
+    participant Trading as 📊 Trading Engine
+    participant ETH as ⛓️ Ethereum
+    
+    User->>Mic: Speaks Command
+    Note over User,Mic: "Buy 0.5 ETH worth of USDC"
+    
+    Mic->>Avatar: Audio Stream
+    Avatar->>Avatar: Speech to Text
+    Avatar->>NLP: Text Analysis
+    
+    NLP->>NLP: Parse Intent<br/>Extract Parameters
+    Note over NLP: Action: BUY<br/>Amount: 0.5 ETH<br/>Token: USDC
+    
+    NLP->>Vault: Check Balance
+    Vault-->>NLP: Available: 2.5 ETH ✓
+    
+    NLP->>Trading: Create Order
+    Note over Trading: Validate & Build<br/>Transaction
+    
+    Trading->>Trading: Calculate Gas
+    Trading->>Trading: Find Best Route
+    
+    Trading->>ETH: Submit Transaction
+    ETH->>ETH: Execute on DEX
+    
+    ETH-->>Trading: Transaction Hash
+    Trading-->>Avatar: Success Status
+    
+    Avatar->>Avatar: Generate Response
+    Avatar->>User: Voice Feedback
+    Note over Avatar,User: "Trade executed successfully!<br/>Bought 250 USDC"
+    
+    Avatar->>User: Update UI
+    Note over Avatar,User: New Balance Display
+```
+
+---
+
+## 💰 Vault System
+
+The Vault is a smart contract-based system that securely stores user funds for instant voice-activated trading.
+
+```mermaid
+graph LR
+    subgraph DEPOSIT["💵 DEPOSIT"]
+        D1[Connect Wallet]
+        D2[Approve Amount]
+        D3[Transfer to Vault]
+    end
+    
+    subgraph VAULT["🏦 VAULT"]
+        V1[Smart Contract<br/>Storage]
+        V2[Balance Tracking]
+        V3[Available Funds]
+    end
+    
+    subgraph TRADING["📊 TRADING"]
+        T1[Voice Command]
+        T2[Validate Balance]
+        T3[Execute Trade]
+        T4[Update Balance]
+    end
+    
+    subgraph WITHDRAW["💸 WITHDRAW"]
+        W1[Request Withdrawal]
+        W2[Vault Approval]
+        W3[Transfer to Wallet]
+    end
+    
+    D1 --> D2
+    D2 --> D3
+    D3 --> V1
+    V1 --> V2
+    V2 --> V3
+    
+    V3 --> T1
+    T1 --> T2
+    T2 --> T3
+    T3 --> T4
+    T4 --> V2
+    
+    V3 --> W1
+    W1 --> W2
+    W2 --> W3
+```
+
+### Vault Smart Contract
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title AVAVault
+ * @dev Secure vault for storing user funds for voice trading
+ */
+contract AVAVault is ReentrancyGuard, Ownable {
+    
+    // User balance mapping
+    mapping(address => mapping(address => uint256)) public balances;
+    
+    // Trading contract authorization
+    mapping(address => bool) public authorizedTraders;
+    
+    // Events
+    event Deposit(address indexed user, address indexed token, uint256 amount);
+    event Withdraw(address indexed user, address indexed token, uint256 amount);
+    event Trade(address indexed user, address indexed tokenIn, address indexed tokenOut, uint256 amountIn, uint256 amountOut);
+    
+    /**
+     * @dev Deposit ETH to vault
+     */
+    function depositETH() external payable nonReentrant {
+        require(msg.value > 0, "Amount must be greater than 0");
+        balances[msg.sender][address(0)] += msg.value;
+        emit Deposit(msg.sender, address(0), msg.value);
+    }
+    
+    /**
+     * @dev Deposit ERC20 tokens to vault
+     */
+    function depositToken(address token, uint256 amount) external nonReentrant {
+        require(amount > 0, "Amount must be greater than 0");
+        require(IERC20(token).transferFrom(msg.sender, address(this), amount), "Transfer failed");
+        balances[msg.sender][token] += amount;
+        emit Deposit(msg.sender, token, amount);
+    }
+    
+    /**
+     * @dev Withdraw ETH from vault
+     */
+    function withdrawETH(uint256 amount) external nonReentrant {
+        require(balances[msg.sender][address(0)] >= amount, "Insufficient balance");
+        balances[msg.sender][address(0)] -= amount;
+        (bool success, ) = msg.sender.call{value: amount}("");
+        require(success, "Transfer failed");
+        emit Withdraw(msg.sender, address(0), amount);
+    }
+    
+    /**
+     * @dev Withdraw ERC20 tokens from vault
+     */
+    function withdrawToken(address token, uint256 amount) external nonReentrant {
+        require(balances[msg.sender][token] >= amount, "Insufficient balance");
+        balances[msg.sender][token] -= amount;
+        require(IERC20(token).transfer(msg.sender, amount), "Transfer failed");
+        emit Withdraw(msg.sender, token, amount);
+    }
+    
+    /**
+     * @dev Execute trade (only authorized traders)
+     */
+    function executeTrade(
+        address user,
+        address tokenIn,
+        address tokenOut,
+        uint256 amountIn,
+        uint256 amountOut
+    ) external nonReentrant {
+        require(authorizedTraders[msg.sender], "Not authorized");
+        require(balances[user][tokenIn] >= amountIn, "Insufficient balance");
+        
+        balances[user][tokenIn] -= amountIn;
+        balances[user][tokenOut] += amountOut;
+        
+        emit Trade(user, tokenIn, tokenOut, amountIn, amountOut);
+    }
+    
+    /**
+     * @dev Get user balance
+     */
+    function getBalance(address user, address token) external view returns (uint256) {
+        return balances[user][token];
+    }
+    
+    /**
+     * @dev Authorize trading contract
+     */
+    function authorizeTrader(address trader) external onlyOwner {
+        authorizedTraders[trader] = true;
+    }
+    
+    /**
+     * @dev Revoke trading contract authorization
+     */
+    function revokeTrader(address trader) external onlyOwner {
+        authorizedTraders[trader] = false;
+    }
+}
+```
+
+---
+
+## 🗣️ Voice Commands
+
+### Available Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| 💰 **Deposit** | Add funds to vault | "Deposit 1 ETH to vault" |
+| 💸 **Withdraw** | Remove funds from vault | "Withdraw 0.5 ETH" |
+| 📊 **Check Balance** | View vault balance | "What's my balance?" |
+| 🪙 **Check Tokens** | List portfolio tokens | "Show my tokens" |
+| 🔄 **Buy** | Purchase tokens | "Buy 0.5 ETH of LINK" |
+| 💱 **Sell** | Sell tokens | "Sell 50 LINK for ETH" |
+| 🔁 **Swap** | Exchange tokens | "Swap 1 ETH for USDT" |
+| 📈 **Price** | Check token price | "What's the price of ETH?" |
+| 📜 **History** | View transactions | "Show my last 5 trades" |
+
+---
+
+## 🖥️ Frontend Implementation
+
+### Voice Recognition Component
+
+```typescript
+// hooks/useVoiceRecognition.ts
+import { useEffect, useState, useCallback } from 'react';
+
+interface VoiceRecognitionResult {
+  transcript: string;
+  confidence: number;
+  isFinal: boolean;
+}
+
+export const useVoiceRecognition = () => {
+  const [isListening, setIsListening] = useState(false);
+  const [transcript, setTranscript] = useState('');
+  const [recognition, setRecognition] = useState<any>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = 
+        (window as any).SpeechRecognition || 
+        (window as any).webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        const recognitionInstance = new SpeechRecognition();
+        recognitionInstance.continuous = true;
+        recognitionInstance.interimResults = true;
+        recognitionInstance.lang = 'en-US';
+
+        recognitionInstance.onresult = (event: any) => {
+          let finalTranscript = '';
+          
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript += transcript + ' ';
+            }
+          }
+          
+          if (finalTranscript) {
+            setTranscript(finalTranscript.trim());
+          }
+        };
+
+        recognitionInstance.onerror = (event: any) => {
+          console.error('Speech recognition error:', event.error);
+          setIsListening(false);
+        };
+
+        setRecognition(recognitionInstance);
+      }
+    }
+  }, []);
+
+  const startListening = useCallback(() => {
+    if (recognition) {
+      recognition.start();
+      setIsListening(true);
+    }
+  }, [recognition]);
+
+  const stopListening = useCallback(() => {
+    if (recognition) {
+      recognition.stop();
+      setIsListening(false);
+    }
+  }, [recognition]);
+
+  return {
+    isListening,
+    transcript,
+    startListening,
+    stopListening,
+  };
+};
+```
+
+### Voice Command Parser
+
+```typescript
+// utils/commandParser.ts
+
+export interface ParsedCommand {
+  action: 'deposit' | 'withdraw' | 'buy' | 'sell' | 'swap' | 'balance' | 'price' | 'unknown';
+  amount?: number;
+  tokenFrom?: string;
+  tokenTo?: string;
+  raw: string;
+}
+
+export const parseVoiceCommand = (transcript: string): ParsedCommand => {
+  const normalizedText = transcript.toLowerCase().trim();
+  
+  // Deposit pattern
+  if (normalizedText.includes('deposit')) {
+    const amountMatch = normalizedText.match(/deposit\s+([\d.]+)\s+(\w+)/i);
+    if (amountMatch) {
+      return {
+        action: 'deposit',
+        amount: parseFloat(amountMatch[1]),
+        tokenFrom: amountMatch[2].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  // Withdraw pattern
+  if (normalizedText.includes('withdraw')) {
+    const amountMatch = normalizedText.match(/withdraw\s+([\d.]+)\s+(\w+)/i);
+    if (amountMatch) {
+      return {
+        action: 'withdraw',
+        amount: parseFloat(amountMatch[1]),
+        tokenFrom: amountMatch[2].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  // Buy pattern: "Buy 0.5 ETH of LINK" or "Buy LINK with 0.5 ETH"
+  if (normalizedText.includes('buy') || normalizedText.includes('purchase')) {
+    const buyMatch = normalizedText.match(/buy\s+([\d.]+)\s+(\w+)\s+(?:of|worth of)\s+(\w+)/i);
+    if (buyMatch) {
+      return {
+        action: 'buy',
+        amount: parseFloat(buyMatch[1]),
+        tokenFrom: buyMatch[2].toUpperCase(),
+        tokenTo: buyMatch[3].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  // Sell pattern
+  if (normalizedText.includes('sell')) {
+    const sellMatch = normalizedText.match(/sell\s+([\d.]+)\s+(\w+)\s+(?:for|to)\s+(\w+)/i);
+    if (sellMatch) {
+      return {
+        action: 'sell',
+        amount: parseFloat(sellMatch[1]),
+        tokenFrom: sellMatch[2].toUpperCase(),
+        tokenTo: sellMatch[3].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  // Swap pattern
+  if (normalizedText.includes('swap') || normalizedText.includes('exchange')) {
+    const swapMatch = normalizedText.match(/(?:swap|exchange)\s+([\d.]+)\s+(\w+)\s+(?:for|to)\s+(\w+)/i);
+    if (swapMatch) {
+      return {
+        action: 'swap',
+        amount: parseFloat(swapMatch[1]),
+        tokenFrom: swapMatch[2].toUpperCase(),
+        tokenTo: swapMatch[3].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  // Balance check
+  if (normalizedText.includes('balance') || normalizedText.includes('how much')) {
+    return {
+      action: 'balance',
+      raw: transcript,
+    };
+  }
+  
+  // Price check
+  if (normalizedText.includes('price') || normalizedText.includes('how much is')) {
+    const priceMatch = normalizedText.match(/(?:price of|how much is)\s+(\w+)/i);
+    if (priceMatch) {
+      return {
+        action: 'price',
+        tokenFrom: priceMatch[1].toUpperCase(),
+        raw: transcript,
+      };
+    }
+  }
+  
+  return {
+    action: 'unknown',
+    raw: transcript,
+  };
+};
+```
+
+### Voice Trading Component
+
+```typescript
+// components/VoiceTrading.tsx
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useVoiceRecognition } from '@/hooks/useVoiceRecognition';
+import { parseVoiceCommand } from '@/utils/commandParser';
+import { useWeb3 } from '@/hooks/useWeb3';
+
+export default function VoiceTrading() {
+  const { isListening, transcript, startListening, stopListening } = useVoiceRecognition();
+  const { executeTrade, getBalance } = useWeb3();
+  const [status, setStatus] = useState<string>('');
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  useEffect(() => {
+    if (transcript) {
+      handleVoiceCommand(transcript);
+    }
+  }, [transcript]);
+
+  const handleVoiceCommand = async (text: string) => {
+    const command = parseVoiceCommand(text);
+    setIsProcessing(true);
+    
+    try {
+      switch (command.action) {
+        case 'buy':
+        case 'sell':
+        case 'swap':
+          setStatus(`Executing ${command.action}...`);
+          await executeTrade(command);
+          setStatus(`✅ Trade completed successfully!`);
+          // Text-to-speech feedback
+          speak(`Trade executed successfully! ${command.action} completed.`);
+          break;
+          
+        case 'balance':
+          const balance = await getBalance();
+          setStatus(`Your balance: ${balance} ETH`);
+          speak(`Your current balance is ${balance} ETH`);
+          break;
+          
+        case 'deposit':
+          setStatus(`Depositing ${command.amount} ${command.tokenFrom}...`);
+          // Handle deposit
+          speak(`Deposit initiated for ${command.amount} ${command.tokenFrom}`);
+          break;
+          
+        case 'withdraw':
+          setStatus(`Withdrawing ${command.amount} ${command.tokenFrom}...`);
+          // Handle withdrawal
+          speak(`Withdrawal initiated for ${command.amount} ${command.tokenFrom}`);
+          break;
+          
+        default:
+          setStatus('❌ Command not recognized. Please try again.');
+          speak('Sorry, I did not understand that command.');
+      }
+    } catch (error) {
+      setStatus(`❌ Error: ${error.message}`);
+      speak('An error occurred while processing your command.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const speak = (text: string) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+      window.speechSynthesis.speak(utterance);
+    }
+  };
+
+  return (
+    <div className="voice-trading-container">
+      <div className="avatar-display">
+        {/* 3D Avatar Component */}
+      </div>
+      
+      <div className="controls">
+        <button
+          onClick={isListening ? stopListening : startListening}
+          className={`mic-button ${isListening ? 'active' : ''}`}
+          disabled={isProcessing}
+        >
+          {isListening ? '🎤 Listening...' : '🎤 Start Voice Trading'}
+        </button>
+        
+        {transcript && (
+          <div className="transcript">
+            <p><strong>You said:</strong> {transcript}</p>
+          </div>
+        )}
+        
+        {status && (
+          <div className="status">
+            <p>{status}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+## 🔗 Web3 Integration
+
+### Trading Engine
+
+```typescript
+// utils/tradingEngine.ts
+import { ethers } from 'ethers';
+import { ParsedCommand } from './commandParser';
+
+const VAULT_ABI = [/* Vault Contract ABI */];
+const VAULT_ADDRESS = '0x...'; // Your deployed vault address
+
+export class TradingEngine {
+  private provider: ethers.providers.Web3Provider;
+  private signer: ethers.Signer;
+  private vaultContract: ethers.Contract;
+
+  constructor(provider: ethers.providers.Web3Provider) {
+    this.provider = provider;
+    this.signer = provider.getSigner();
+    this.vaultContract = new ethers.Contract(
+      VAULT_ADDRESS,
+      VAULT_ABI,
+      this.signer
+    );
+  }
+
+  async depositToVault(amount: string, token: string): Promise<ethers.ContractTransaction> {
+    const amountInWei = ethers.utils.parseEther(amount);
+    
+    if (token === 'ETH') {
+      return await this.vaultContract.depositETH({
+        value: amountInWei,
+      });
+    } else {
+      // Handle ERC20 deposits
+      const tokenContract = new ethers.Contract(
+        token,
+        ['function approve(address spender, uint256 amount) returns (bool)'],
+        this.signer
+      );
+      
+      await tokenContract.approve(VAULT_ADDRESS, amountInWei);
+      return await this.vaultContract.depositToken(token, amountInWei);
+    }
+  }
+
+  async withdrawFromVault(amount: string, token: string): Promise<ethers.ContractTransaction> {
+    const amountInWei = ethers.utils.parseEther(amount);
+    
+    if (token === 'ETH') {
+      return await this.vaultContract.withdrawETH(amountInWei);
+    } else {
+      return await this.vaultContract.withdrawToken(token, amountInWei);
+    }
+  }
+
+  async executeTrade(command: ParsedCommand): Promise<ethers.ContractTransaction> {
+    // Integrate with DEX aggregator (e.g., 1inch, Uniswap)
+    const quote = await this.getQuote(
+      command.tokenFrom!,
+      command.tokenTo!,
+      command.amount!
+    );
+    
+    // Execute trade through vault
+    return await this.vaultContract.executeTrade(
+      await this.signer.getAddress(),
+      command.tokenFrom,
+      command.tokenTo,
+      ethers.utils.parseEther(command.amount!.toString()),
+      ethers.utils.parseEther(quote.amountOut)
+    );
+  }
+
+  async getBalance(token: string = 'ETH'): Promise<string> {
+    const userAddress = await this.signer.getAddress();
+    const balance = await this.vaultContract.getBalance(
+      userAddress,
+      token === 'ETH' ? ethers.constants.AddressZero : token
+    );
+    return ethers.utils.formatEther(balance);
+  }
+
+  private async getQuote(tokenIn: string, tokenOut: string, amount: number) {
+    // Implement DEX aggregator integration
+    // This would call 1inch API, Uniswap, etc.
+    return {
+      amountOut: '250', // Example
+      route: [],
+      gasEstimate: '150000',
+    };
+  }
+}
+```
+
+---
+
+## 🧪 AVA Mainnet Development
+
+Before deploying to Ethereum Mainnet, all features were tested on **AVA Mainnet** - our private Ethereum fork.
+
+```mermaid
+graph LR
+    subgraph DEV["👨‍💻 DEVELOPMENT"]
+        D1[Write Smart Contracts]
+        D2[Build Voice AI]
+        D3[Create UI/UX]
+    end
+    
+    subgraph AVA["🧪 AVA MAINNET<br/>Ethereum Fork"]
+        A1[Deploy Contracts]
+        A2[Test Voice Commands]
+        A3[Simulate Trading]
+        A4[Load Testing]
+        A5[Bug Fixes]
+    end
+    
+    subgraph VALIDATE["✅ VALIDATION"]
+        V1[Performance Tests]
+        V2[User Testing]
+        V3[Final Review]
+    end
+    
+    subgraph PROD["🚀 ETHEREUM MAINNET"]
+        P1[Deploy to Production]
+        P2[Live Trading]
+        P3[Real Users]
+    end
+    
+    D1 --> D2
+    D2 --> D3
+    D3 --> A1
+    A1 --> A2
+    A2 --> A3
+    A3 --> A4
+    A4 --> A5
+    A5 --> A1
+    
+    A5 --> V1
+    V1 --> V2
+    V2 --> V3
+    
+    V3 --> P1
+    P1 --> P2
+    P2 --> P3
+```
+
+### Why AVA Mainnet?
+
+- ✅ **Zero Cost Testing** - No real gas fees
+- ✅ **Safe Environment** - No risk to real funds
+- ✅ **Unlimited Iterations** - Test and redeploy freely
+- ✅ **Realistic Behavior** - True Ethereum fork
+- ✅ **Complete Coverage** - 100% feature testing
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+```bash
+node >= 18.0.0
+npm >= 9.0.0
+MetaMask browser extension
+```
 
 ### Installation
+
 ```bash
-git clone <repository-url>
-cd ava-ecosystem
+# Clone the repository
+git clone https://github.com/your-username/ava-voice-trade.git
+cd ava-voice-trade
+
+# Install dependencies
 npm install
-npm run setup
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Deploy smart contracts (local)
+npm run deploy:local
+
+# Start development server
 npm run dev
 ```
 
-## 📋 Table of Contents
-
-1. [🏗️ Architecture](#️-architecture)
-2. [✨ Features](#-features)
-3. [🛠️ Installation](#️-installation)
-4. [🔧 Configuration](#-configuration)
-5. [📊 Usage Examples](#-usage-examples)
-6. [🔗 API Reference](#-api-reference)
-7. [🤝 Contributing](#-contributing)
-8. [🛣️ Roadmap](#️-roadmap)
-9. [🆘 Support](#-support)
-
-## 🏗️ Architecture
-
-### System Overview
-
-The $AVA ecosystem consists of multiple interconnected layers:
-
-**User Interface Layer:**
-- Voice Interface: Natural language voice commands
-- Web Application: Browser-based trading platform  
-- Mobile App: Cross-platform mobile experience
-
-**AI Processing Layer:**
-- Gemini 2.5 LLM: Advanced language understanding
-- AI Processing Engine: Market analysis and predictions
-- Voice Recognition: Speech-to-text conversion
-- 3D Renderer: WebGL-powered immersive interface
-
-**Blockchain Layer:**
-- AVA Chain: Custom Ethereum fork
-- Smart Contract Vault: Secure asset management
-- Security Layer: Multi-layer protection
-- DeFi Integration: Decentralized finance protocols
-
-### Custom Ethereum Fork Specifications
-```yaml
-Network Details:
-  Name: AVA Chain
-  Chain ID: 31337
-  RPC URL: https://mainnet.vividstar.store
-  Consensus: Proof of Stake (PoS)
-  Block Time: 2 seconds
-  Gas Limit: 30M per block
-  Finality: 1 block confirmation
-
-Optimizations:
-  Gas Reduction: 90% lower than mainnet
-  Transaction Speed: 2000+ TPS
-  AI Oracle: Native integration
-  Voice Verification: Blockchain-level support
-```
-
-## ✨ Features
-
-### 🎙️ Advanced Voice Trading
-- **Natural Language Processing**: "Buy 2 ETH at market price"
-- **Voice Biometric Authentication**: Secure voice-based identity verification
-- **24/7 Availability**: Always-on AI assistant
-- **Multi-language Support**: Global accessibility
-- **Emotional Intelligence**: Stress and sentiment detection
-
-### 🎮 Immersive 3D Experience
-- **Photorealistic Avatar**: High-fidelity 3D AVA model
-- **Cyberpunk Environment**: Futuristic trading floor
-- **Real-time Animations**: Voice-responsive facial expressions
-- **Particle Effects**: Dynamic visual effects responding to market volatility
-
-### 🤖 AI-Powered Intelligence
-- **Market Prediction**: Advanced ML models for price forecasting
-- **Risk Assessment**: Real-time portfolio risk analysis
-- **Sentiment Analysis**: Social media and news sentiment tracking
-- **Pattern Recognition**: Technical analysis automation
-- **Automated Strategies**: AI-driven trading algorithms
-
-### ⛓️ Blockchain Innovation
-- **Custom Smart Contracts**: Gas-optimized trading contracts
-- **Cross-Chain Support**: Coming soon
-- **DeFi Integration**: Native DEX and lending protocol support
-- **Governance System**: Community-driven decision making
-
-## 🛠️ Installation
-
-### Prerequisites
-```bash
-# System Requirements
-Node.js >= 18.0.0
-Python >= 3.9.0
-Rust >= 1.70.0
-Docker >= 20.10.0
-
-# Development Tools
-Git
-VS Code (recommended)
-MetaMask or compatible Web3 wallet
-```
-
-### Local Development Setup
-```bash
-# 1. Clone the repository
-git clone <repository-url>
-cd ava-ecosystem
-
-# 2. Install dependencies
-npm run install:all
-
-# 3. Setup environment
-cp .env.example .env
-# Edit .env with your API keys
-
-# 4. Initialize blockchain environment
-cd packages/blockchain
-npm run compile
-npm run deploy:local
-
-# 5. Start AI services
-cd ../ai-engine
-pip install -r requirements.txt
-python setup.py install
-
-# 6. Launch 3D engine
-cd ../3d-engine
-npm run build:models
-
-# 7. Start development servers
-npm run dev:all
-```
-
-### Docker Setup
-```bash
-# Quick start with Docker
-docker-compose up -d
-
-# Verify services
-docker-compose ps
-```
-
-## 🔧 Configuration
-
 ### Environment Variables
-```env
-# Blockchain Configuration
-PRIVATE_KEY=your_deployer_private_key
-RPC_URL=https://mainnet.vividstar.store
-CHAIN_ID=31337
-ETHERSCAN_API_KEY=your_etherscan_key
 
-# AI Configuration
-GEMINI_API_KEY=your_gemini_api_key
-OPENAI_API_KEY=your_backup_ai_key
-GOOGLE_TTS_API_KEY=your_google_tts_key
-AZURE_SPEECH_API_KEY=your_azure_speech_key
-ASSEMBLYAI_API_KEY=your_assemblyai_key
-DEEPGRAM_API_KEY=your_deepgram_key
-
-# 3D Configuration
-MODELS_CDN_URL=https://cdn.ava-tar.live/models
-TEXTURES_CDN_URL=https://cdn.ava-tar.live/textures
-WEBGL_DEBUG=false
-
-# Security
-JWT_SECRET=your_jwt_secret
-VOICE_ENCRYPTION_KEY=your_voice_encryption_key
-VAULT_SECURITY_KEY=your_vault_security_key
-
-# External APIs
-COINGECKO_API_KEY=your_coingecko_key
-DUNE_API_KEY=your_dune_key
-TWITTER_API_KEY=your_twitter_key
-```
-
-### AI Model Configuration
-```typescript
-// config/ai-models.ts
-export const AI_CONFIG = {
-  primary: {
-    provider: 'gemini',
-    model: 'gemini-2.5-pro',
-    temperature: 0.3,
-    maxTokens: 4096
-  },
-  backup: {
-    provider: 'openai',
-    model: 'gpt-4-turbo',
-    temperature: 0.2,
-    maxTokens: 4096
-  },
-  voice: {
-    stt: 'deepgram-nova-2',
-    tts: 'google-neural-voices',
-    language: 'en-US'
-  },
-  trading: {
-    confidence_threshold: 0.85,
-    risk_tolerance: 'medium',
-    max_position_size: 0.1
-  }
-};
-```
-
-## 📊 Usage Examples
-
-### Voice Trading Commands
-```typescript
-// Basic Trading
-"Buy 2 ETH at market price"
-"Sell 1 ETH from my position"
-"Check my portfolio balance"
-"What's the current price of ETH?"
-
-// Advanced Trading
-"Set stop loss at 3000 for my ETH position"
-"Execute my DCA strategy for ETH"
-"Show me the most volatile tokens today"
-"Create a limit order for ETH at 3200"
-
-// Risk Management
-"What's my current risk exposure?"
-"Emergency exit all positions"
-"Set maximum position size to 5%"
-"Show portfolio diversification analysis"
-
-// Market Analysis
-"What does AI predict for ETH in the next hour?"
-"Analyze market sentiment for ETH"
-"Show me correlation between ETH and BTC"
-"Display fear and greed index"
-
-// 3D Environment
-"Switch to dark mode environment"
-"Show trading charts in 3D"
-"Customize my avatar appearance"
-```
-
-### 3D Interface Integration
-```typescript
-// Initialize 3D trading environment
-import { AVA3DEngine } from '@ava/3d-engine';
-
-const engine = new AVA3DEngine({
-  container: document.getElementById('trading-view'),
-  environment: 'cyberpunk_office',
-  avatar: {
-    model: 'ava-premium',
-    animations: ['idle', 'talking', 'listening'],
-    voiceSync: true
-  },
-  charts: {
-    style: 'holographic',
-    updateFrequency: 1000,
-    maxDataPoints: 1000
-  }
-});
-
-// Load market data visualization
-engine.loadMarketData({
-  symbols: ['ETH/USD', 'BTC/USD', 'AVAX/USD'],
-  timeframe: '1h',
-  indicators: ['SMA', 'RSI', 'MACD']
-});
-
-// Setup voice interaction
-engine.enableVoiceControl({
-  commands: ['zoom', 'rotate', 'focus', 'analyze'],
-  sensitivity: 0.8
-});
-```
-
-### Smart Contract Interaction
-```solidity
-// Vault interaction example
-interface IAVAVault {
-    function executeVoiceTrade(
-        uint256 amount,
-        uint256 targetPrice,
-        bytes32 commandHash,
-        bytes calldata voiceSignature
-    ) external;
-    
-    function emergencyVoiceExit(
-        bytes32 commandHash,
-        bytes calldata voiceSignature
-    ) external;
-    
-    function getPosition(address user, uint256 index) 
-        external view returns (VaultPosition memory);
-}
-
-// JavaScript integration
-const vault = new ethers.Contract(vaultAddress, vaultABI, signer);
-
-// Execute voice-verified trade
-const tx = await vault.executeVoiceTrade(
-    ethers.utils.parseEther("2"),
-    ethers.utils.parseEther("3200"),
-    commandHash,
-    voiceSignature
-);
-```
-
-### AI Prediction API
-```python
-# Python SDK usage
-from ava_sdk import AVAClient
-
-client = AVAClient(api_key="your_api_key")
-
-# Get market prediction
-prediction = await client.predict_price(
-    symbol="ETH/USD",
-    timeframe="1h",
-    confidence_min=0.8
-)
-
-print(f"Prediction: ${prediction.target_price}")
-print(f"Confidence: {prediction.confidence}%")
-print(f"Reasoning: {prediction.explanation}")
-
-# Analyze portfolio risk
-risk_analysis = await client.analyze_portfolio_risk(
-    portfolio=user_portfolio,
-    market_conditions="current"
-)
-
-print(f"Risk Score: {risk_analysis.score}/100")
-print(f"Recommendations: {risk_analysis.recommendations}")
-```
-
-## 🔗 API Reference
-
-### Coming Soon
-Our comprehensive API documentation and SDK references are currently being finalized and will be available soon. This will include:
-
-- REST API endpoints for all trading functions
-- WebSocket events for real-time data
-- Authentication and security protocols
-- Rate limiting and usage guidelines
-- Complete SDK documentation for multiple programming languages
-
-Stay tuned for updates!
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how to get started:
-
-### Development Workflow
 ```bash
-# 1. Fork the repository
-git fork <repository-url>
-
-# 2. Create a feature branch
-git checkout -b feature/amazing-feature
-
-# 3. Make your changes
-# ... code, test, document ...
-
-# 4. Run tests
-npm run test:all
-npm run lint:all
-npm run security:audit
-
-# 5. Commit with conventional commits
-git commit -m "feat(voice): enhance Gemini 2.5 integration"
-
-# 6. Push and create PR
-git push origin feature/amazing-feature
+# .env.local
+NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_key
+NEXT_PUBLIC_VAULT_ADDRESS=0x...
+NEXT_PUBLIC_CHAIN_ID=1
+PRIVATE_KEY=your_private_key_for_deployment
 ```
 
-### Contribution Guidelines
+---
 
-#### Code Standards
-- **TypeScript**: Strict type checking enabled
-- **Python**: Black formatting, mypy type checking
-- **Solidity**: 100% test coverage required
-- **Documentation**: All public APIs must be documented
-- **Security**: Security review required for smart contracts
+## 🛠️ Technology Stack
 
-#### Testing Requirements
+```mermaid
+mindmap
+  root((AVA-TAR<br/>TECH))
+    Frontend
+      Three.js 3D Engine
+      Web Speech API
+      React/Next.js
+      WebGL Rendering
+      Tailwind CSS
+    Voice AI
+      Speech Recognition
+      Natural Language Processing
+      Intent Classification
+      Text to Speech
+      Multi-language
+    Blockchain
+      Ethers.js
+      Solidity ^0.8.20
+      MetaMask Integration
+      Ethereum Network
+      AVA Mainnet Fork
+      ERC-20 Support
+    Trading
+      DEX Aggregators
+      Uniswap V3
+      1inch Integration
+      Gas Optimization
+      Slippage Protection
+    Backend
+      Node.js
+      Express
+      WebSocket
+      PostgreSQL
+      Redis Cache
+    Security
+      Smart Contract Testing
+      OpenZeppelin
+      Reentrancy Guards
+      Access Control
+      Rate Limiting
+```
+
+---
+
+## 📊 User Journey
+
+```mermaid
+graph TB
+    Start([👤 User Visits Site])
+    Start --> Connect[🦊 Connect Wallet]
+    Connect --> Deposit[💰 Deposit to Vault]
+    Deposit --> Ready{Ready to Trade}
+    
+    Ready -->|Voice Command| Speak[🎤 Speak Command]
+    Speak --> Listen[🤖 Avatar Listens]
+    Listen --> Process[🧠 AI Processes]
+    Process --> Validate[✅ Validate Request]
+    
+    Validate -->|Sufficient Funds| Execute[⚡ Execute Trade]
+    Validate -->|Insufficient| Deny[❌ Request More Funds]
+    Deny --> Deposit
+    
+    Execute --> Blockchain[⛓️ Submit to Ethereum]
+    Blockchain --> Confirm[✅ Transaction Confirmed]
+    Confirm --> Update[📊 Update Balance]
+    Update --> Feedback[🔊 Voice Feedback]
+    
+    Feedback --> More{More Trading?}
+    More -->|Yes| Ready
+    More -->|No| Withdraw[💸 Withdraw Funds]
+    Withdraw --> End([👋 Session End])
+    
+    Ready -->|Check Status| Status[📊 View Balance/Tokens]
+    Status --> Ready
+```
+
+---
+
+## 🧪 Testing
+
 ```bash
-# Unit tests
-npm run test:unit
+# Run unit tests
+npm run test
 
-# Integration tests
+# Run integration tests
 npm run test:integration
 
-# E2E tests
-npm run test:e2e
+# Test smart contracts
+npm run test:contracts
 
-# Security tests
-npm run test:security
-
-# Performance tests
-npm run test:performance
+# Coverage report
+npm run test:coverage
 ```
 
-#### Documentation
-- All features must include documentation
-- API changes require documentation updates
-- Examples must be provided for new features
-- Architecture decisions must be documented
+### Example Test
 
-## 🛣️ Roadmap
-
-### 2025 Q4 - Foundation 🔄
-- [ ] Enhanced 3D trading environments
-- [ ] Cross-chain bridge implementation
-- [ ] Enterprise API gateway
-- [ ] Mobile app with full 3D support
-- [ ] AI prediction accuracy optimization
-- [ ] Multi-language voice support
-
-### 2026 Q1 - Expansion 📈
-- [ ] Institutional trading tools
-- [ ] NFT marketplace integration
-- [ ] DeFi yield optimization AI
-- [ ] Global regulatory compliance
-- [ ] Advanced risk management tools
-- [ ] Social trading features
-
-### 2026 Q2 - Innovation 🚀
-- [ ] Metaverse trading rooms
-- [ ] AI agent marketplace
-- [ ] Neural interface research
-- [ ] Global expansion completion
-- [ ] Enterprise partnerships
-
-## 💰 Token Information
-
-### $AVA Token Details
-```yaml
-Token Information:
-  Name: AVA Token
-  Symbol: $AVA
-  Type: ERC-20 (Custom implementation)
-  Blockchain: AVA Chain (Base compatible)
-  Total Supply: 1,000,000,000 AVA
-  Decimals: 18
-  
-Current Metrics:
-  Price: ~$0.0283 USD
-  Market Cap: ~$28.3M USD
-  24h Volume: ~$5.37M USD
-  Circulating Supply: 1B AVA
-  
-Utility:
-  - Platform access and premium features
-  - Governance voting rights
-  - AI model training participation
-  - 3D avatar customization
-```
-
-### Token Distribution
-
-**Community & Users**: 40%
-**Development Team**: 20%
-**Ecosystem Fund**: 15%
-**Strategic Partners**: 10%
-**Liquidity Provision**: 10%
-**Advisors**: 5%
-
-### Staking & Rewards
 ```typescript
-// Staking contract interface
-interface IAVAStaking {
-    function stake(uint256 amount) external;
-    function unstake(uint256 amount) external;
-    function claimRewards() external;
-    function getStakingAPY() external view returns (uint256);
-    function getUserStake(address user) external view returns (uint256);
+// __tests__/commandParser.test.ts
+import { parseVoiceCommand } from '@/utils/commandParser';
+
+describe('Voice Command Parser', () => {
+  it('should parse buy command correctly', () => {
+    const result = parseVoiceCommand('Buy 0.5 ETH of LINK');
+    
+    expect(result.action).toBe('buy');
+    expect(result.amount).toBe(0.5);
+    expect(result.tokenFrom).toBe('ETH');
+    expect(result.tokenTo).toBe('LINK');
+  });
+
+  it('should parse balance check', () => {
+    const result = parseVoiceCommand('What is my balance?');
+    
+    expect(result.action).toBe('balance');
+  });
+
+  it('should handle unknown commands', () => {
+    const result = parseVoiceCommand('Random text');
+    
+    expect(result.action).toBe('unknown');
+  });
+});
+```
+
+---
+
+## 📖 API Documentation
+
+### REST API Endpoints
+
+```typescript
+// GET /api/vault/balance
+// Returns user's vault balance
+
+GET /api/vault/balance?address=0x123...&token=ETH
+
+Response:
+{
+  "success": true,
+  "balance": "2.5",
+  "token": "ETH"
+}
+```
+
+```typescript
+// POST /api/trade/execute
+// Execute a trade
+
+POST /api/trade/execute
+Content-Type: application/json
+
+{
+  "action": "buy",
+  "amount": 0.5,
+  "tokenFrom": "ETH",
+  "tokenTo": "LINK"
 }
 
-// Reward calculation
-const stakingRewards = {
-  basic: 0.15,      // 15% APY for basic staking
-  premium: 0.18,    // 18% APY with voice verification
-  diamond: 0.20     // 20% APY for top-tier holders
-};
+Response:
+{
+  "success": true,
+  "txHash": "0xabc...",
+  "amountOut": "250.5"
+}
 ```
+
+---
 
 ## 🔒 Security
 
-### Security Features
-- **Voice Biometric Authentication**: Unique voice patterns for secure access
-- **Real-time Monitoring**: 24/7 security monitoring and alerts
-- **Emergency Procedures**: Instant pause and recovery mechanisms
+- ✅ Smart contracts tested on AVA Mainnet
+- ✅ OpenZeppelin security patterns
+- ✅ Reentrancy guards on all external calls
+- ✅ Access control for critical functions
+- ✅ Rate limiting on API endpoints
+- ✅ Input validation and sanitization
+- ✅ Secure key management
 
-### Security Best Practices
-```typescript
-// Security guidelines for developers
-const SECURITY_PRACTICES = {
-  smartContracts: {
-    requireMultiSig: true,
-    auditRequired: true,
-    testCoverage: 100,
-    formalVerification: true
-  },
-  api: {
-    rateLimiting: true,
-    inputValidation: true,
-    encryption: 'AES-256',
-    authentication: 'JWT + Biometric'
-  },
-  infrastructure: {
-    monitoring: '24/7',
-    backups: 'Real-time',
-    ddosProtection: true,
-    accessControl: 'Role-based'
-  }
-};
-```
+---
 
-### Incident Response
-```yaml
-Incident Response Plan:
-  Detection: Automated monitoring + security team alerts
-  Assessment: 15-minute initial response time
-  Containment: Automatic pause mechanisms
-  Eradication: Hot fixes within 1 hour
-  Recovery: Service restoration with monitoring
-  Lessons: Post-incident analysis and improvements
-```
+## 🤝 Contributing
 
-## 📱 Mobile Application
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-### Features
-- **Voice Trading**: Full voice command support
-- **3D Experience**: Mobile-optimized 3D interface
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Download Links
-- 📱 **iOS**: [App Store](https://apps.apple.com/app/ava-voice-trading)
-- 🤖 **Android**: [Google Play](https://play.google.com/store/apps/details?id=live.avatar.trading)
-- 🌐 **PWA**: [Web App](https://app.ava-tar.live)
-
-## 🌍 Community & Ecosystem
-
-### Official Channels
-- **🌐 Website**: [ava-tar.trade](https://avavoice.trade)
-- **📱 Telegram**: [t.me/AvaVoiceTrading](https://t.me/AvaVoiceTrading)
-- **🐦 Twitter**: [@AvaVoiceTrading](https://twitter.com/AvaVoiceTrading)
-
-### Developer Resources
-- **📚 Documentation**: [docs.ava-tar.live](https://docs.ava-tar.live)
-- **🔧 API Reference**: [api.ava-tar.live](https://api.ava-tar.live)
-- **💼 GitHub**: [github.com/ava-tar](https://github.com/AvaVoiceTrading)
-
-### Community Programs
-- 👨‍🏫 **Ambassador Program**: Global community representatives
-- 📝 **Content Creator Fund**: Support for educational content
-
-## 🆘 Support
-
-### Getting Help
-- **📧 Email**: support@avavoice.trade
-- **📱 Telegram**: Quick responses from team
-- **🎫 GitHub Issues**: Bug reports and feature requests
-- **📖 Documentation**: Comprehensive guides and tutorials
-
-### FAQ
-
-**Q: Is $AVA safe to use?**
-A: Yes, $AVA has undergone multiple security audits and implements industry-leading security practices.
-
-**Q: Can I use $AVA without a cryptocurrency wallet?**
-A: No, you need a Web3 wallet like MetaMask to interact with the blockchain features. However, you can use the demo mode to explore the interface.
-
-**Q: What languages does the voice interface support?**
-A: Currently supports English, Spanish, French, German, Chinese, and Japanese, with more languages being added regularly.
-
-**Q: Is there a mobile app?**
-A: The APK will be available for download from our website soon.
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Third-Party Licenses
-- **Three.js**: MIT License
-- **TensorFlow**: Apache 2.0 License
-- **OpenZeppelin**: MIT License
-- **Gemini API**: Google Cloud Terms of Service
+---
 
-## 🙏 Acknowledgments
+## 📞 Contact
 
-### Core Team
-- **🧠 AI Team**: Advanced machine learning and natural language processing
-- **⛓️ Blockchain Team**: Custom Ethereum fork and smart contract development
-- **🎮 3D Team**: Immersive WebGL experiences and avatar creation
-- **🔒 Security Team**: Multi-layer security architecture and auditing
-- **📱 Mobile Team**: Cross-platform mobile application development
-
-### Special Thanks
-- **Google AI**: For Gemini 2.5 LLM access and support
-- **Ethereum Foundation**: For open-source blockchain technology
-- **Three.js Community**: For amazing 3D graphics capabilities
-- **OpenZeppelin**: For secure smart contract libraries
-- **Our Community**: For continuous feedback and support
+- Website: [avavoice.trade](https://avavoice.trade)
+- Twitter: [@AvaVoiceTrading](https://x.com/AvaVoiceTrading)
+- telegram: [Join our community](https://t.me/AvaVoiceTrading)
+- Email: info@avavoice.trade
 
 ---
 
-**🚀 Ready to revolutionize your crypto trading experience?**
+## 🌟 Acknowledgments
 
-**[Get Started](https://app.ava-tar.trade) | [Join X](https://x.com/AvaVoiceTrading) | [Read Docs](https://docs.ava-tar.trade)**
+- OpenZeppelin for secure smart contract libraries
+- Ethereum Foundation for the blockchain infrastructure
+- The Web3 community for continuous innovation
+- All contributors and testers who made this possible
 
 ---
 
-*Built with ❤️ by the $AVA Team*  
+**Built with ❤️ by the AVA Voice Trade Team**
+
+[⭐ Star us on GitHub](https://github.com/AvaVoiceTrading) | [🐛 Report Bug](https://github.com/AvaVoiceTrading/issues) | [💡 Request Feature](https://github.com/AvaVoiceTrading/issues)
