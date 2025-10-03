@@ -1021,6 +1021,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - Website: [avavoice.trade](https://avavoice.trade)
+- Dapp: [app.avavoice.trade](https://app.avavoice.trade)
+- Documentation: [app.avavoice.trade/docs](https://app.avavoice.trade/docs)
 - Twitter: [@AvaVoiceTrading](https://x.com/AvaVoiceTrading)
 - telegram: [Join our community](https://t.me/AvaVoiceTrading)
 - Email: info@avavoice.trade
